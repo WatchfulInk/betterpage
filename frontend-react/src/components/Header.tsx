@@ -40,7 +40,10 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 md:items-center">
+            <Link to="/sales" className="text-gray-700 hover:text-[#FF0000]">
+              Sales
+            </Link>
             <Link to="/products" className="text-gray-700 hover:text-[#FF0000]">
               Products
             </Link>
@@ -55,7 +58,7 @@ const Header = () => {
             </Link>
             <button
               onClick={handleLogout}
-              className="text-gray-700 hover:text-[#FF0000]"
+              className="bg-[#FF0000] text-white hover:bg-red-700 cursor-pointer font-bold px-3 py-1 rounded-md transition-colors duration-200"
             >
               Logout
             </button>

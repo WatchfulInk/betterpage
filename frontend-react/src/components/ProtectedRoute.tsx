@@ -11,17 +11,16 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 
   useEffect(() => {
     const checkAuth = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost:8000/api/auth/user/",
-          {
-            withCredentials: true,
-          }
-        );
-        setIsAuthenticated(true);
-      } catch (error) {
-        setIsAuthenticated(false);
-      }
+      await axios
+        .get("http://localhost:8000/api/auth/user/", {
+          withCredentials: true,
+        })
+        .then(() => {
+          setIsAuthenticated(true);
+        })
+        .catch(() => {
+          setIsAuthenticated(false);
+        });
     };
 
     checkAuth();

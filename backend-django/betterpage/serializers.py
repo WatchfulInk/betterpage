@@ -22,6 +22,13 @@ class TrabajoSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class VentaSerializer(serializers.ModelSerializer):
+    producto = ProductoSerializer(read_only=True)
+    producto_id = serializers.PrimaryKeyRelatedField(
+        queryset=Producto.objects.all(),
+        source='producto',
+        write_only=True
+    )
+
     class Meta:
         model = Venta
-        fields = '__all__' 
+        fields = ['id_venta', 'nombre_venta', 'producto', 'producto_id', 'cantidad', 'fecha'] 
