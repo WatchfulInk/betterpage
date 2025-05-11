@@ -110,6 +110,15 @@ The backend provides the following API endpoints:
 - `/api/auth/logout/` - User logout
 - `/api/auth/user/` - User information
 
+## Default Login Credentials
+
+The following credentials are available for testing the application:
+
+```
+Username: admin
+Password: root
+```
+
 ## Features
 
 - User authentication
