@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'betterpage',
 ]
 
@@ -78,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'betterpage',
         'USER': 'postgres',
-        'PASSWORD': '1234567890',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '5432',
     }
